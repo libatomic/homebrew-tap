@@ -4,8 +4,8 @@ require_relative "../custom_download_strategy.rb"
 class AtomicCli < Formula
   desc "A command-line tool for Atomic"
   homepage "https://github.com/libatomic/atomic-cli"
-  url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.2.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
-  sha256 "2cea8136da96d05143b2603b1fe7afcedb0fde78ea0ab801d30897390cc24816"
+  url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.3.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
+  sha256 "bc7d4da2282c348b6975d756070963913dfc9dd4feb0816347683a8922fc845c"
   license "MIT"
 
   depends_on "go" => :build
@@ -17,21 +17,7 @@ class AtomicCli < Formula
   # end
 
   def install
-    token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    ohai "has token? #{ENV.key?("HOMEBREW_GITHUB_API_TOKEN") || ENV.key?("GITHUB_TOKEN")}"
-
-    odie "HOMEBREW_GITHUB_API_TOKEN is required for private modules" if token.to_s.empty?
-
-    ENV["GOPRIVATE"]  = "github.com/libatomic/*"
-    ENV["GONOSUMDB"]  = "github.com/libatomic/*"
-    ENV["GONOPROXY"]  = "github.com/libatomic/*"
-    ENV["GOPROXY"]    = "direct"
-    ENV["GIT_TERMINAL_PROMPT"] = "0" 
-
-    ENV["HOME"] = buildpath # make --global write into the build sandbox
-    system "git", "config", "--global",
-           "url.https://#{token}:x-oauth-basic@github.com/.insteadof", "https://github.com/"
-
+    ENV["GOFLAGS"] = "-mod=vendor"
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli/main.go"
   end
