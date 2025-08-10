@@ -20,11 +20,11 @@ class AtomicCli < Formula
 
   def install
   # 1) Get token from environment (Brew may filter; pass inline if needed)
-    token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    token = ENV["GITHUB_TOKEN"] if token.to_s.empty?
-    token = ENV["GH_TOKEN"]      if token.to_s.empty?
-    odie "Token required for private modules (set HOMEBREW_GITHUB_API_TOKEN / GITHUB_TOKEN / GH_TOKEN)" if token.to_s.empty?
-
+    token = ENV["BREW_GH_PAT"]
+    if token.nil? || token.empty?
+      odie "BREW_GH_PAT environment variable is required to fetch private modules"
+    end
+    
     # 2) Go env so it fetches modules directly from GitHub and treats your org as private
     ENV["GOPRIVATE"]          = "github.com/libatomic/*"
     ENV["GONOSUMDB"]          = "github.com/libatomic/*"
