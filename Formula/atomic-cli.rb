@@ -1,9 +1,7 @@
 require "formula"
 require_relative "../custom_download_strategy.rb"
 
-class AtomicCli < Formula
-  env :std
-  
+class AtomicCli < Formula  
   desc "A command-line tool for Atomic"
   homepage "https://github.com/libatomic/atomic-cli"
   url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.3.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
@@ -12,19 +10,13 @@ class AtomicCli < Formula
 
   depends_on "go" => :build
 
-  # Additional dependency
-  # resource "" do
-  #   url ""
-  #   sha256 ""
-  # end
-
   def install
   # 1) Get token from environment (Brew may filter; pass inline if needed)
     token = ENV["BREW_GH_PAT"]
     if token.nil? || token.empty?
       odie "BREW_GH_PAT environment variable is required to fetch private modules"
     end
-    
+
     # 2) Go env so it fetches modules directly from GitHub and treats your org as private
     ENV["GOPRIVATE"]          = "github.com/libatomic/*"
     ENV["GONOSUMDB"]          = "github.com/libatomic/*"
