@@ -7,9 +7,7 @@ class EnvTest < Formula
     head "https://github.com/Homebrew/brew.git"
   
     def install
-      ohai "HOMEBREW_GITHUB_API_TOKEN=#{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
-      ohai "GITHUB_TOKEN=#{ENV["GITHUB_TOKEN"]}"
-      ohai "GH_TOKEN=#{ENV["GH_TOKEN"]}"
+      ohai "BREW_GH_PAT=#{ENV["BREW_GH_PAT"]}"
   
       # install a tiny script so formula is valid
       (bin/"env-test").write <<~SH
