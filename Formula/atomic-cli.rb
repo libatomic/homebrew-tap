@@ -16,7 +16,7 @@ class AtomicCli < Formula
     ENV["GONOPROXY"]  = "github.com/libatomic/*"
     ENV["GOPROXY"]    = "direct"
     ENV["GOSUMDB"]    = "off"
-    ENV["GIT_TERMINAL_PROMPT"] = "0"
+    ENV["GIT_TERMINAL_PROMPT"] = "1"
     ENV["HOME"] = Dir.home
     ENV["GIT_CONFIG_GLOBAL"] = File.expand_path("~/.gitconfig")
 
