@@ -20,7 +20,7 @@ class AtomicCli < Formula
     ENV["HOME"] = Dir.home
     ENV["GIT_CONFIG_GLOBAL"] = File.expand_path("~/.gitconfig")
 
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/atomic-cli"
   end
 
   test do
