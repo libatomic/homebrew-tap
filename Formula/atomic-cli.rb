@@ -17,6 +17,20 @@ class AtomicCli < Formula
   # end
 
   def install
+    token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    odie "HOMEBREW_GITHUB_API_TOKEN is required for private modules" if token.to_s.empty?
+
+    ENV["GOPRIVATE"]  = "github.com/libatomic/*"
+    ENV["GONOSUMDB"]  = "github.com/libatomic/*"
+    ENV["GONOPROXY"]  = "github.com/libatomic/*"
+    ENV["GOPROXY"]    = "direct"
+    ENV["GIT_TERMINAL_PROMPT"] = "0" 
+
+    ENV["HOME"] = buildpath # make --global write into the build sandbox
+    system "git", "config", "--global",
+           "url.https://#{token}:x-oauth-basic@github.com/.insteadof", "https://github.com/"
+
+
     system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli/main.go"
   end
 
