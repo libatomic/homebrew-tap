@@ -17,7 +17,7 @@ class AtomicCli < Formula
   # end
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin/"atomic", "cmd/atomic-cli/main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli/main.go"
   end
 
   test do
