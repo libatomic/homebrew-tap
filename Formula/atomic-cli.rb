@@ -4,8 +4,8 @@ require_relative "../custom_download_strategy.rb"
 class AtomicCli < Formula  
   desc "A command-line tool for Atomic"
   homepage "https://github.com/libatomic/atomic-cli"
-  url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.3.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
-  sha256 "bc7d4da2282c348b6975d756070963913dfc9dd4feb0816347683a8922fc845c"
+  url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.4.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
+  sha256 "267571dfec75daaaf15a032a3c008f0f75fdfd4d7fd31f17fe52e389bfd1df2a"
   license "MIT"
 
   depends_on "go" => :build
