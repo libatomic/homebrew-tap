@@ -1,10 +1,10 @@
 require "download_strategy"
 
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
+  env :std
+
   require "utils/formatter"
   require "utils/github"
-
-  env :std
 
   def initialize(url, name, version, **meta)
     super
