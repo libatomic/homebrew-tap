@@ -17,7 +17,7 @@ class AtomicCli < Formula
     ENV["GOPROXY"]    = "direct"
     ENV["GOSUMDB"]    = "off"
     ENV["GIT_TERMINAL_PROMPT"] = "0"
-
+    ENV["HOME"] = Dir.home
     ENV["GIT_CONFIG_GLOBAL"] = File.expand_path("~/.gitconfig")
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli/main.go"
