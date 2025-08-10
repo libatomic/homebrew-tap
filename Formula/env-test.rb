@@ -1,14 +1,20 @@
+require "formula"
+
 class EnvTest < Formula
     env :std
     desc "Test env passthrough"
     homepage "https://example.com"
-    url "https://example.com/dummy.tar.gz"
-    sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    head "https://github.com/Homebrew/brew.git"
   
     def install
       ohai "HOMEBREW_GITHUB_API_TOKEN=#{ENV["HOMEBREW_GITHUB_API_TOKEN"]}"
       ohai "GITHUB_TOKEN=#{ENV["GITHUB_TOKEN"]}"
       ohai "GH_TOKEN=#{ENV["GH_TOKEN"]}"
-      system "true"
+  
+      # install a tiny script so formula is valid
+      (bin/"env-test").write <<~SH
+        #!/bin/sh
+        echo "env-test OK"
+      SH
     end
   end
