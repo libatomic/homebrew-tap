@@ -4,6 +4,8 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   require "utils/formatter"
   require "utils/github"
 
+  env :std
+
   def initialize(url, name, version, **meta)
     super
     parse_url_pattern
