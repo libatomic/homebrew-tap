@@ -2,6 +2,8 @@ require "formula"
 require_relative "../custom_download_strategy.rb"
 
 class AtomicCli < Formula
+  env :std
+  
   desc "A command-line tool for Atomic"
   homepage "https://github.com/libatomic/atomic-cli"
   url "https://github.com/libatomic/atomic-cli/archive/refs/tags/v0.0.3.tar.gz", :using => GitHubPrivateRepositoryDownloadStrategy 
