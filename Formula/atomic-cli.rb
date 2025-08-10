@@ -17,7 +17,28 @@ class AtomicCli < Formula
   # end
 
   def install
-    ENV["GOFLAGS"] = "-mod=vendor"
+  # 1) Get token from environment (Brew may filter; pass inline if needed)
+    token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    token = ENV["GITHUB_TOKEN"] if token.to_s.empty?
+    token = ENV["GH_TOKEN"]      if token.to_s.empty?
+    odie "Token required for private modules (set HOMEBREW_GITHUB_API_TOKEN / GITHUB_TOKEN / GH_TOKEN)" if token.to_s.empty?
+
+    # 2) Go env so it fetches modules directly from GitHub and treats your org as private
+    ENV["GOPRIVATE"]          = "github.com/libatomic/*"
+    ENV["GONOSUMDB"]          = "github.com/libatomic/*"
+    ENV["GONOPROXY"]          = "github.com/libatomic/*"
+    ENV["GOPROXY"]            = "direct"
+    ENV["GOSUMDB"]            = "off"           # avoid remote checksum DB for private
+    ENV["GIT_TERMINAL_PROMPT"] = "0"            # fail fast if auth is wrong
+
+    # 3) Make sure git config lands in a writable HOME that go's git will read
+    ENV["HOME"] = buildpath
+
+    # 4) Rewrite all https://github.com/… to include the token (Basic auth)
+    #    The username can be anything; :x-oauth-basic is a common convention.
+    system "git", "config", "--global",
+          "url.https://#{token}:x-oauth-basic@github.com/.insteadof", "https://github.com/"
+
 
     system "go", "build", *std_go_args(ldflags: "-s -w"), "cmd/atomic-cli/main.go"
   end
