@@ -18,6 +18,8 @@ class AtomicCli < Formula
 
   def install
     token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    ohai "has token? #{ENV.key?("HOMEBREW_GITHUB_API_TOKEN") || ENV.key?("GITHUB_TOKEN")}"
+
     odie "HOMEBREW_GITHUB_API_TOKEN is required for private modules" if token.to_s.empty?
 
     ENV["GOPRIVATE"]  = "github.com/libatomic/*"
