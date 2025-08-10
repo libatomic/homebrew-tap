@@ -8,7 +8,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     super
     parse_url_pattern
     set_github_token
-  endit
+  end
 
   def parse_url_pattern
     unless match = url.match(%r{https://github.com/([^/]+)/([^/]+)/(\S+)})
