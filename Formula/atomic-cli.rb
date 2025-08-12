@@ -9,13 +9,13 @@ class AtomicCli < Formula
   # macOS
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.5/atomic-cli_Darwin_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Darwin_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "3047ef189ea9a1d663e18fca67ed6777670a4e2a1b1e46c351616779194e4fa3"
+      sha256 "9f3421794c533270193c1fcdd09ef7c5dc5fd82bda5892da8115c2f4a8e62365"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.5/atomic-cli_Darwin_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Darwin_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "3b1abaf6a39da9369a9b27014d49a89129caf5ae1a82d4beed3d4b54aa046839"
+      sha256 "619898eb83b9694b6ed5ce387ec500bb3cb4d88b637ca5337797facf9e629873"
     end
   end
 
@@ -23,13 +23,13 @@ class AtomicCli < Formula
   on_linux do
     if Hardware::CPU.arm?
       # Adjust to armv7/armhf if that's what you ship; otherwise arm64/aarch64
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.5/atomic-cli_Linux_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Linux_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "140163c939f515716bb6749ffca3d7366d94b39cd0b5e8aaf103af19955f09bd"
+      sha256 "74a3da2eff572bf083f7f6613d907936507e26d933f3723149142d57c476061b"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.5/atomic-cli_Linux_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Linux_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "961dcefaa5658489315b50ce447ed10ec41c270b8dab6412d3327379a6cc1e6d"
+      sha256 "27cacac250d262137c049ecc5b3f14abefa3da30850788f6f77c012d2404ae63"
     end
   end
 
