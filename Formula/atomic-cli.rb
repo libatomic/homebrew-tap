@@ -9,13 +9,13 @@ class AtomicCli < Formula
   # macOS
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Darwin_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Darwin_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "9f3421794c533270193c1fcdd09ef7c5dc5fd82bda5892da8115c2f4a8e62365"
+      sha256 "65a603349d5974c064f42da1ef44812f7d3d617b0fc442e256b67a47f09087f8"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Darwin_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Darwin_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "619898eb83b9694b6ed5ce387ec500bb3cb4d88b637ca5337797facf9e629873"
+      sha256 "8ba7168a9b46c109b285fc4390b04a560691b7c642b7a6748e75e6491c33947f"
     end
   end
 
@@ -23,13 +23,25 @@ class AtomicCli < Formula
   on_linux do
     if Hardware::CPU.arm?
       # Adjust to armv7/armhf if that's what you ship; otherwise arm64/aarch64
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Linux_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Linux_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "74a3da2eff572bf083f7f6613d907936507e26d933f3723149142d57c476061b"
+      sha256 "02b10493213d365eb444cdaa47782eeabd04fabd8a13158f1241daafd27f699e"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.8/atomic-cli_Linux_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Linux_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "27cacac250d262137c049ecc5b3f14abefa3da30850788f6f77c012d2404ae63"
+      sha256 "ade711fcacf0b80f4cad405e56ab312fdc5c2dd05a547e25b492d45a2cb6865e"
+    end
+  end
+
+  on_windows do
+    if Hardware::CPU.arm?
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Windows_arm64.zip",
+          using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "e9f6f40310e67e53479706ffc816ddfcc7c9dd2f3dd0e8e9f05cacedfd517044"
+    else
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Windows_amd64.zip",
+          using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "76d78ea037509c781f0aaffa9d0defc838b585f4b1547e7089f82112c40e4d47"
     end
   end
 
