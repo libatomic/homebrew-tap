@@ -33,18 +33,6 @@ class AtomicCli < Formula
     end
   end
 
-  on_windows do
-    if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Windows_arm64.zip",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "e9f6f40310e67e53479706ffc816ddfcc7c9dd2f3dd0e8e9f05cacedfd517044"
-    else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.10/atomic-cli_Windows_amd64.zip",
-          using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "76d78ea037509c781f0aaffa9d0defc838b585f4b1547e7089f82112c40e4d47"
-    end
-  end
-
   def install
     # If your tarball unpacks to just the binary:
     bin.install "atomic-cli"
