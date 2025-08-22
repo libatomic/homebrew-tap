@@ -9,13 +9,13 @@ class AtomicCli < Formula
   # macOS
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.12/atomic-cli_Darwin_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v1.0.10-alpha.28/atomic-cli_Darwin_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "65a3caae3b05b4a82bf27bee9eeb7332da3cfa84228c7d28fe5244782c446b52"
+      sha256 "d26670d06a22a4d45069d929fa180bf2984093c140b7c51a204d957a34c3f976"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.12/atomic-cli_Darwin_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v1.0.10-alpha.28/atomic-cli_Darwin_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "ee233830b5c6bce742c9e3ad90cd4071cfa4c269a2cef3be72e535e2e3111e45"
+      sha256 "9c9d8bed186c00d7d16e0ff7615ae32815d859be15c2649d01d19184c7a7b17e"
     end
   end
 
@@ -23,13 +23,13 @@ class AtomicCli < Formula
   on_linux do
     if Hardware::CPU.arm?
       # Adjust to armv7/armhf if that's what you ship; otherwise arm64/aarch64
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.12/atomic-cli_Linux_arm64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v1.0.10-alpha.28/atomic-cli_Linux_arm64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6924f28d1f7ea43512a95a3b570bdd6f1fd455c1b0e4d39cc1f156e55df48696"
+      sha256 "51b86ab1b32036363b711f48a24f3cff97f568029c369f38aa6e66240cb19daf"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.12/atomic-cli_Linux_amd64.tar.gz",
+      url "https://github.com/libatomic/atomic-cli/releases/download/v1.0.10-alpha.28/atomic-cli_Linux_amd64.tar.gz",
           using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7b4e810eebea3dd8fea0981385673c66c0552da0d6e6eb36dbeb7c8993804491"
+      sha256 "04794aec3715dfba60138371d796b423521777fc6d6a683e41c2db0daee78485"
     end
   end
 
