@@ -9,11 +9,11 @@ class AtomicCli < Formula
   # macOS
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.16/atomic-cli_Darwin_arm64.tar.gz"
-      sha256 "ed85b2d1b9a008ea06a585437c84cb5581fc3049de6fff1b76e8652b7b5e1bf3"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.17/atomic-cli_Darwin_arm64.tar.gz"
+      sha256 "0c99e2a06ad34b29ec09f6c2f26eff62d3e07c9d606fb5ab4c64880be8b207d7"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.16/atomic-cli_Darwin_amd64.tar.gz"
-      sha256 "a0b668a09cbec6e7ec685278256e21a9f4476013637e1eb12e84955aed86fc1b"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.17/atomic-cli_Darwin_amd64.tar.gz"
+      sha256 "4ca7a2a3369cf73ca17d5cb2b2cd0f93c043e385edadf41ddf97904879c650cb"
     end
   end
 
@@ -21,11 +21,11 @@ class AtomicCli < Formula
   on_linux do
     if Hardware::CPU.arm?
       # Adjust to armv7/armhf if that's what you ship; otherwise arm64/aarch64
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.16/atomic-cli_Linux_arm64.tar.gz"
-      sha256 "b03777a06ffc2c3ce1b36a9937032e33f7b784a8f96a38e80e273b403f304849"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.17/atomic-cli_Linux_arm64.tar.gz"
+      sha256 "bd849bb89dcccbcaa92839deaf778fb3c96d90f31eb28bcd225e72bee51ae76e"
     else
-      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.16/atomic-cli_Linux_amd64.tar.gz"
-      sha256 "8eff78caf179d9a32b48c2376803f8fb832bbe854648f773ae6cf477e06bac39"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v0.0.17/atomic-cli_Linux_amd64.tar.gz"
+      sha256 "5bcd68d48781e62f11f81cf3742e9bafe9eb23aa10fbea94c6dc542e08283480"
     end
   end
 
