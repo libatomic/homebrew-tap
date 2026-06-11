@@ -9,7 +9,7 @@ Official [Homebrew](https://brew.sh) tap for [Atomic CLI](https://github.com/lib
 brew tap libatomic/tap
 
 # Install atomic-cli
-brew install --cask libatomic/tap/atomic-cli
+brew install libatomic/tap/atomic-cli
 ```
 
 ## Upgrading
