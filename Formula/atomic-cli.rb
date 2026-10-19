@@ -5,21 +5,21 @@
 class AtomicCli < Formula
   desc "A command-line tool for Atomic"
   homepage "https://github.com/libatomic/atomic-cli"
-  version "2.2.0-rc.1"
+  version "2.2.0-rc.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.1/atomic-cli_Darwin_x86_64.tar.gz"
-      sha256 "d383070043ac230716e7ee54286fd8d955db6060f0fadd279f0438337e0ca032"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.2/atomic-cli_Darwin_x86_64.tar.gz"
+      sha256 "fb29972173e38a298bbc37ca5ed1fc1dd7cbdadea4c9770a9399d1e84192c891"
 
       define_method(:install) do
         bin.install "atomic-cli"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.1/atomic-cli_Darwin_arm64.tar.gz"
-      sha256 "392315cd1c9f8de1e96cce4582dfff8b3fc42d21e9a7220bc52f1f0921cbe33e"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.2/atomic-cli_Darwin_arm64.tar.gz"
+      sha256 "a6e0b82df50e7acce1cafd3cb4c49c0a50e524660f2548ec2a7035da22502e41"
 
       define_method(:install) do
         bin.install "atomic-cli"
@@ -29,15 +29,15 @@ class AtomicCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.1/atomic-cli_Linux_x86_64.tar.gz"
-      sha256 "3c66a1da3a821f4bfe41c970c45db29783ee4cd019007ab023d5d3791cf3dd19"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.2/atomic-cli_Linux_x86_64.tar.gz"
+      sha256 "9b501643a3083953bed36ce13478f0f741bfc324b7f3bf3a391783171b6e5091"
       define_method(:install) do
         bin.install "atomic-cli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.1/atomic-cli_Linux_arm64.tar.gz"
-      sha256 "6d5a87aa7aec18483f81b91a3d8b2de070bab8de5f0b7d805788ac6ea09314d4"
+      url "https://github.com/libatomic/atomic-cli/releases/download/v2.2.0-rc.2/atomic-cli_Linux_arm64.tar.gz"
+      sha256 "f16180ad7f32cb724b87198bdd65bf6ab3425367f6d2b2d2c0a21c51f9ec8608"
       define_method(:install) do
         bin.install "atomic-cli"
       end
