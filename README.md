@@ -1,4 +1,4 @@
-# Homebrew Tap for Atomic CLI
+# Homebrew Tap for Passport
 
 Official [Homebrew](https://brew.sh) tap for [Atomic CLI](https://github.com/libatomic/atomic-cli) - the command-line interface for the [Passport Atomic Stack](https://github.com/libatomic/atomic).
 
@@ -30,6 +30,27 @@ atomic-cli --version
 | Formula | Description |
 |---------|-------------|
 | `atomic-cli` | CLI for managing Atomic instances, users, plans, subscriptions, migrations, and more |
+| `passport` | Passport desktop, headless (Linux x64 and arm64): the whole Passport on one computer |
+
+| Cask | Description |
+|------|-------------|
+| `passport` | Passport desktop for macOS (Apple silicon and Intel), with the `passport` command line on the PATH |
+
+### Passport desktop
+
+```bash
+# macOS: the app
+brew install --cask libatomic/tap/passport
+
+# Linux: the headless command line
+brew install libatomic/tap/passport
+passport up --headless
+```
+
+The cask and formula are written by passport-desktop's release workflow on
+each release; downloads come from
+[libatomic/passport-releases](https://github.com/libatomic/passport-releases).
+They appear here with the first published release.
 
 ## Supported Platforms
 
