@@ -1,6 +1,6 @@
 # Homebrew Tap for Passport
 
-Official [Homebrew](https://brew.sh) tap for [Atomic CLI](https://github.com/libatomic/atomic-cli) - the command-line interface for the [Passport Atomic Stack](https://github.com/libatomic/atomic).
+Official [Homebrew](https://brew.sh) tap for Passport: `atomic-cli`, the command line for a Passport instance, plus Passport desktop and Passport Studio. Downloads come from [libatomic/passport-releases](https://github.com/libatomic/passport-releases).
 
 ## Installation
 
@@ -126,13 +126,9 @@ atomic-cli migrate substack \
 
 ## Documentation
 
-For full documentation, see the [atomic-cli README](https://github.com/libatomic/atomic-cli#readme).
+`atomic-cli --help` lists every command, and `atomic-cli setup` installs the skills that teach AI coding agents to use it.
 
-## Related Projects
-
-- [atomic](https://github.com/libatomic/atomic) - The Passport Atomic Stack backend
-- [atomic-cli](https://github.com/libatomic/atomic-cli) - CLI tool (this formula)
-- [atomic-go](https://github.com/libatomic/atomic-go) - Go API client library
+The formula is written by atomic-cli's release workflow on each final release. Release candidates are not in the tap; they are on [the releases page](https://github.com/libatomic/passport-releases/releases), tagged `cli-v<version>`.
 
 ## License
 
