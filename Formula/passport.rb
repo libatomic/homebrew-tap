@@ -5,16 +5,16 @@ class Passport < Formula
   homepage "https://github.com/libatomic/passport-releases"
   # A url outside on_linux, so the formula also loads on macOS (Homebrew
   # reads every formula in the tap there); depends_on stops an install.
-  url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.7/passport-2.3.0-rc.7-linux-amd64.tar.gz"
-  version "2.3.0-rc.7"
-  sha256 "708a5bd41160b19c758024df4e7f529a339c2f996505bd6640202a90e6623328"
+  url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.8/passport-2.3.0-rc.8-linux-amd64.tar.gz"
+  version "2.3.0-rc.8"
+  sha256 "66796e37d80c4d3f1bbbbedaf472bd7e2303bff22dc11d57b9f571ac7f162493"
 
   depends_on :linux
 
   on_linux do
     on_arm do
-      url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.7/passport-2.3.0-rc.7-linux-arm64.tar.gz"
-      sha256 "18b799a3fc8c80be05ce208eac30e9ee8d190ef32289f8798c1775929c45b1a6"
+      url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.8/passport-2.3.0-rc.8-linux-arm64.tar.gz"
+      sha256 "6f8fba8cca888536d1af10100c618514621208697609a62c8d8885f906abebf3"
     end
   end
 
@@ -30,9 +30,10 @@ class Passport < Formula
       Run Passport with:
         passport up --headless
 
-      Trusting its local certificate automatically is macOS only for now.
-      Import the file `passport ca --path` prints into your browser, or
-      point your tools at it.
+      With Passport running, `passport trust` adds its local certificate
+      (only good for .localhost) to your browsers (needs certutil, from
+      libnss3-tools or nss-tools) and to the system store (asks for your
+      password).
 
       On macOS, install the app instead:
         brew install --cask libatomic/tap/passport
