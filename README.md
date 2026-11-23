@@ -35,6 +35,7 @@ atomic-cli --version
 | Cask | Description |
 |------|-------------|
 | `passport` | Passport desktop for macOS (Apple silicon and Intel), with the `passport` command line on the PATH |
+| `passport-studio` | Passport Studio for macOS (Apple silicon): build, test and release Passport plugins |
 
 ### Passport desktop
 
@@ -51,6 +52,26 @@ The cask and formula are written by passport-desktop's release workflow on
 each release; downloads come from
 [libatomic/passport-releases](https://github.com/libatomic/passport-releases).
 They appear here with the first published release.
+
+### Passport Studio
+
+```bash
+brew install --cask libatomic/tap/passport-studio
+```
+
+Apple silicon Macs on macOS 12 or later. `brew upgrade --cask passport-studio`
+moves to the newest release and `brew uninstall --cask passport-studio`
+removes the app; plugin projects are kept where you put them.
+
+The cask is written by Passport Studio's release workflow on each release,
+release candidates included; downloads come from
+[libatomic/passport-releases](https://github.com/libatomic/passport-releases).
+Until the builds are signed by Apple the cask clears the download's
+quarantine flag after installing, so the app opens.
+
+For Linux and Windows, download the `.deb`, `.AppImage` or installer from
+[the releases](https://github.com/libatomic/passport-releases/releases); they
+are tagged `studio-v<version>`.
 
 ## Supported Platforms
 
