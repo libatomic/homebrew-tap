@@ -51,7 +51,7 @@ passport up --headless
 The cask and formula are written by passport-desktop's release workflow on
 each release; downloads come from
 [libatomic/passport-releases](https://github.com/libatomic/passport-releases).
-They appear here with the first published release.
+The [Passport desktop guide](https://github.com/libatomic/passport-releases/blob/master/docs/README.md) covers first launch, the command line, agents and CI.
 
 ### Passport Studio
 
