@@ -84,45 +84,28 @@ are tagged `studio-v<version>`.
 
 ## Quick Start
 
-After installing, configure your credentials:
+After installing, sign in once per machine with your own admin account:
 
 ```bash
-# Create credentials file
-mkdir -p ~/.atomic
-cat > ~/.atomic/credentials << 'EOF'
-[default]
-host = "api.example.com"
-access_token = "your_token_here"
-instance_id = "your_instance_id"
-EOF
+atomic-cli login your-site.passport.online
 ```
 
-Or use environment variables:
-
-```bash
-export ATOMIC_API_HOST="api.example.com"
-export ATOMIC_ACCESS_TOKEN="your_token_here"
-export ATOMIC_INSTANCE_ID="your_instance_id"
-```
+The CLI prints (and tries to open) a link to the instance's admin app. Sign in there, click **Authorize**, and paste the token the page shows into the terminal. Tokens are personal and time-limited (30 days by default); the CLI warns before one expires.
 
 Then start using the CLI:
 
 ```bash
+# Which host, instance and account you are signed in to
+atomic-cli whoami
+
 # List users
-atomic-cli -i your_instance user list
+atomic-cli user list
 
-# Import data from another instance
-atomic-cli -i target_instance import \
-  --remote-host api.source.com \
-  --remote-token xxx \
-  --types categories,plans,audiences
-
-# Migrate Substack subscribers
-atomic-cli migrate substack \
-  --stripe-key sk_live_xxx \
-  --email-template "test+{{seq}}@example.com" \
-  --limit 10
+# Sign out: revoke the token and forget it
+atomic-cli logout
 ```
+
+For scripts and CI, create a token through the same page and export it as `PASSPORT_ACCESS_TOKEN`.
 
 ## Documentation
 
