@@ -5,16 +5,16 @@ class Passport < Formula
   homepage "https://github.com/libatomic/passport-releases"
   # A url outside on_linux, so the formula also loads on macOS (Homebrew
   # reads every formula in the tap there); depends_on stops an install.
-  url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.9/passport-2.3.0-rc.9-linux-amd64.tar.gz"
-  version "2.3.0-rc.9"
-  sha256 "5213b76f82430d88e5a2cb404027c98c19677a41406f321b4138550d922ea56e"
+  url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.10/passport-2.3.0-rc.10-linux-amd64.tar.gz"
+  version "2.3.0-rc.10"
+  sha256 "a29a36d50f904ea66f39c32a517bf9cb6bc0ad7930082411e7bbbad1bfb0c089"
 
   depends_on :linux
 
   on_linux do
     on_arm do
-      url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.9/passport-2.3.0-rc.9-linux-arm64.tar.gz"
-      sha256 "94aeb668f8d990be55777af995ce2502fc56e51972c7dfc132e15c89e52cd487"
+      url "https://github.com/libatomic/passport-releases/releases/download/v2.3.0-rc.10/passport-2.3.0-rc.10-linux-arm64.tar.gz"
+      sha256 "ecd6dfed07f5fa4e225051cc9955b8ab8e62ed8617f4034423cd15da3f1d88a0"
     end
   end
 
