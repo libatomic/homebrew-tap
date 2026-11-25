@@ -1,8 +1,8 @@
 # Written by passport-desktop's release workflow (scripts/homebrew.sh).
 # Edits here are replaced on the next release.
 cask "passport" do
-  version "2.3.0-rc.9"
-  sha256 "16913541f8d4efa86ba7bf9f5eb4aba9ee06fac5f228a9a7aa99431cd962c98d"
+  version "2.3.0-rc.10"
+  sha256 "19696472e19975399261b98a476e822a9b266cec83f39a8ba32b947e7e842efb"
 
   url "https://github.com/libatomic/passport-releases/releases/download/v#{version}/Passport-#{version}-arm64.dmg"
   name "Passport"
